@@ -102,7 +102,11 @@ malicious site.
 - Restrict Access-Control-Allow-Origin to trusted domains only (e.g., https://aws.amazon.com).
 - Avoid setting Access-Control-Allow-Credentials: true with untrusted origins.
 
+**Signing off ✌️**
 
+**[ROHAN S](https://www.linkedin.com/in/rohanscr7123/)** 
+
+(**Aspiring Security Engineer**)
 
 
 
