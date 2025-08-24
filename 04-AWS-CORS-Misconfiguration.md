@@ -89,6 +89,7 @@ malicious site.
   - 🕵️ Track/correlate users across devices and services.
   - ⚠️ Potentially hijack sessions if combined with other weaknesses.
   - 🔑 Access metadata intended only for authenticated users.
+
 **Severity: 🔴 Critical (CVSS 9.3)**
 
 ## 💡 Takeaways
