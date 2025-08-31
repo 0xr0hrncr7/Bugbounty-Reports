@@ -81,6 +81,8 @@ Impact: **Critical (P1)** 🔥
 - Practiced building a clean PoC with Burp Suite.
 - Learned to write reports with **clear evidence + reproduction steps**.
 
-Signing off ✌️  
-**ROHAN S**  
-(Aspiring Security Engineer)
+**Signing off ✌️**
+
+**[ROHAN S](https://www.linkedin.com/in/rohanscr7123/)** 
+
+(**Aspiring Security Engineer**)
