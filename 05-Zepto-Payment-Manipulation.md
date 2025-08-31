@@ -39,6 +39,7 @@ Impact: **Critical (P1)** 🔥
 ---
 
 🔬 **Steps to Reproduce (PoC)**
+
 **1. Add items worth ₹179.99 to cart in the Zepto web app.**
 
 **2. Intercept the payment initialization request using Burp Suite.**
