@@ -5,7 +5,7 @@ This was one of my most impactful bug bounty findings — a **payment bypass vul
 
 ---
 
-🐞 **The Vulnerability**  
+## 🐞 **The Vulnerability**  
 So here’s what happened:
 
 The Zepto web checkout flow relied on **client-supplied values** for initializing payments. By intercepting the request to the payment gateway (in.juspay.hyperpay), I noticed that the **amount parameter** could be modified.
@@ -23,9 +23,6 @@ By changing it to:
   "amount": "1.00"
 }
 ```
-
-![WhatsApp Image 2025-08-31 at 7 18 38 PM (4)](https://github.com/user-attachments/assets/5d6a5b13-c3d5-484a-8250-1bfbefc09b31)
-
 
 the backend happily accepted it and processed the order at **₹1.00 instead of ₹179.99**.
 
